@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+
 on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
@@ -17,6 +18,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      SITE_LANGUAGE: ${{ vars.SITE_LANGUAGE }}
+      SITE_TITLE: ${{ vars.SITE_TITLE }}
+      SITE_DESCRIPTION: ${{ vars.SITE_DESCRIPTION }}
+      SITE_AUTHOR_NAME: ${{ vars.SITE_AUTHOR_NAME }}
+      SITE_AUTHOR_TITLE: ${{ vars.SITE_AUTHOR_TITLE }}
+      SITE_AUTHOR_BIO: ${{ vars.SITE_AUTHOR_BIO }}
+      SITE_AUTHOR_EMAIL: ${{ vars.SITE_AUTHOR_EMAIL }}
+      SITE_AUTHOR_LOCATION: ${{ vars.SITE_AUTHOR_LOCATION }}
+      SOCIAL_GITHUB: ${{ vars.SOCIAL_GITHUB }}
+      SOCIAL_LINKEDIN: ${{ vars.SOCIAL_LINKEDIN }}
+      SOCIAL_TWITTER: ${{ vars.SOCIAL_TWITTER }}
+      SOCIAL_MASTODON: ${{ vars.SOCIAL_MASTODON }}
+      SOCIAL_BLUESKY: ${{ vars.SOCIAL_BLUESKY }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
