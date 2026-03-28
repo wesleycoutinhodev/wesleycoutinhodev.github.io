@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: .env
     env:
       SITE_URL: ${{ secrets.SITE_URL }}
       SITE_LANGUAGE: ${{ secrets.SITE_LANGUAGE }}
