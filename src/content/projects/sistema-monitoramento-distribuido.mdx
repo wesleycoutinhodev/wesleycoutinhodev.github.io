@@ -1,0 +1,33 @@
+---
+title: "Sistema de Monitoramento Distribuido"
+role: "Desenvolvedor Backend / Arquiteto de Sistemas"
+year: 2025
+outcomeSummary: "Coleta de metricas em tempo real com arquitetura pub/sub e pipeline pronto para escalar."
+overview: "Solucao distribuida para coletar e monitorar metricas (CPU, RAM, uptime) em tempo real."
+problem: "Centralizar dados de performance de sistemas dispersos de forma continua e sem sobrecarga."
+constraints:
+  - "Comunicacao assincrona e baixa latencia."
+  - "Escalabilidade e manutencao simples dos consumidores."
+  - "Ambiente conteinerizado para reproducao do sistema."
+approach: "Pipeline de streaming com MQTT em pub/sub e servicos conteinerizados com Docker e Docker Compose."
+keyDecisions:
+  - decision: "MQTT (Eclipse Mosquitto) para pub/sub."
+    reasoning: "Protocolo leve ideal para streaming continuo de metricas."
+  - decision: "Docker Compose para orquestrar servicos."
+    reasoning: "Padroniza ambientes e acelera testes de integracao."
+techStack:
+  - "Python"
+  - "MQTT (Eclipse Mosquitto)"
+  - "Docker"
+  - "Docker Compose"
+  - "Linux"
+impact:
+  qualitative: "Estrutura modular e escalavel que simula ambientes de nuvem reais."
+learnings:
+  - "Comunicacao assincrona e streaming de dados."
+  - "Estruturacao modular de microsservicos."
+  - "Orquestracao avancada de containers."
+featured: true
+status: completed
+order: 2
+---
