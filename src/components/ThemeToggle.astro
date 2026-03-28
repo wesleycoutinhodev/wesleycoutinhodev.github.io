@@ -8,8 +8,7 @@
  * 
  * Features:
  * - Persists theme preference to localStorage
- * - Respects system color scheme preference (prefers-color-scheme)
- * - Automatically updates when system preference changes (if no manual preference set)
+ * - Defaults to dark when no preference is stored
  * - Works with Astro View Transitions via event delegation
  * - Accessible with keyboard focus and ARIA labels
  * 
@@ -89,11 +88,11 @@
 </style>
 
 <script>
-  // Get theme from storage or system preference
+  // Get theme from storage or default to dark
   const getTheme = (): 'light' | 'dark' => {
     const stored = localStorage.getItem('theme');
     if (stored === 'light' || stored === 'dark') return stored;
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return 'dark';
   };
 
   // Apply theme to document
@@ -114,13 +113,6 @@
     const toggle = (e.target as Element).closest('.theme-toggle');
     if (toggle) {
       toggleTheme();
-    }
-  });
-
-  // Listen for system preference changes (only once)
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      setTheme(e.matches ? 'light' : 'dark');
     }
   });
 
