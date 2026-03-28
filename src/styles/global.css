@@ -65,6 +65,11 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
   --shadow-glow: 0 0 30px var(--color-accent-glow);
+
+  /* Background Dot Grid */
+  --dot-color: rgba(255, 255, 255, 0.06);
+  --dot-size: 1px;
+  --dot-spacing: 24px;
   
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -95,6 +100,9 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  /* Background Dot Grid */
+  --dot-color: rgba(0, 0, 0, 0.06);
 }
 
 /* CSS Reset and Base Styles */
@@ -115,6 +123,8 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-image: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-spacing) var(--dot-spacing);
   color: var(--color-text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: var(--font-size-base);
