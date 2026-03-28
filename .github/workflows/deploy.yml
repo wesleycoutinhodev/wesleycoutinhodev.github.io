@@ -24,20 +24,20 @@ jobs:
     environment:
       name: github-pages
     env:
-      SITE_URL: ${{ vars.SITE_URL }}
-      SITE_LANGUAGE: ${{ vars.SITE_LANGUAGE }}
-      SITE_TITLE: ${{ vars.SITE_TITLE }}
-      SITE_DESCRIPTION: ${{ vars.SITE_DESCRIPTION }}
-      SITE_AUTHOR_NAME: ${{ vars.SITE_AUTHOR_NAME }}
-      SITE_AUTHOR_TITLE: ${{ vars.SITE_AUTHOR_TITLE }}
-      SITE_AUTHOR_BIO: ${{ vars.SITE_AUTHOR_BIO }}
-      SITE_AUTHOR_EMAIL: ${{ vars.SITE_AUTHOR_EMAIL }}
-      SITE_AUTHOR_LOCATION: ${{ vars.SITE_AUTHOR_LOCATION }}
-      SOCIAL_GITHUB: ${{ vars.SOCIAL_GITHUB }}
-      SOCIAL_LINKEDIN: ${{ vars.SOCIAL_LINKEDIN }}
-      SOCIAL_TWITTER: ${{ vars.SOCIAL_TWITTER }}
-      SOCIAL_MASTODON: ${{ vars.SOCIAL_MASTODON }}
-      SOCIAL_BLUESKY: ${{ vars.SOCIAL_BLUESKY }}
+      SITE_URL: ${{ secrets.SITE_URL }}
+      SITE_LANGUAGE: ${{ secrets.SITE_LANGUAGE }}
+      SITE_TITLE: ${{ secrets.SITE_TITLE }}
+      SITE_DESCRIPTION: ${{ secrets.SITE_DESCRIPTION }}
+      SITE_AUTHOR_NAME: ${{ secrets.SITE_AUTHOR_NAME }}
+      SITE_AUTHOR_TITLE: ${{ secrets.SITE_AUTHOR_TITLE }}
+      SITE_AUTHOR_BIO: ${{ secrets.SITE_AUTHOR_BIO }}
+      SITE_AUTHOR_EMAIL: ${{ secrets.SITE_AUTHOR_EMAIL }}
+      SITE_AUTHOR_LOCATION: ${{ secrets.SITE_AUTHOR_LOCATION }}
+      SOCIAL_GITHUB: ${{ secrets.SOCIAL_GITHUB }}
+      SOCIAL_LINKEDIN: ${{ secrets.SOCIAL_LINKEDIN }}
+      SOCIAL_TWITTER: ${{ secrets.SOCIAL_TWITTER }}
+      SOCIAL_MASTODON: ${{ secrets.SOCIAL_MASTODON }}
+      SOCIAL_BLUESKY: ${{ secrets.SOCIAL_BLUESKY }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
