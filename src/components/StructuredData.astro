@@ -45,14 +45,6 @@ function generateStructuredData(type: string, data: Record<string, any>) {
           jobTitle: siteConfig.author.title,
           url: siteURL,
         },
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${siteURL}/writing?q={search_term_string}`,
-          },
-          'query-input': 'required name=search_term_string',
-        },
       };
 
     case 'Project':
@@ -109,7 +101,17 @@ function generateStructuredData(type: string, data: Record<string, any>) {
         sameAs: data.socialLinks || socialLinks,
         email: data.email || siteConfig.author.email,
         image: data.image,
-        knowsAbout: data.skills || [],
+        knowsAbout: data.skills || [
+          'Backend Engineering',
+          'Python',
+          'FastAPI',
+          'Distributed Systems',
+          'PostgreSQL',
+          'Redis',
+          'Docker',
+          'Reliability',
+          'Applied AI',
+        ],
       };
 
     case 'BreadcrumbList':

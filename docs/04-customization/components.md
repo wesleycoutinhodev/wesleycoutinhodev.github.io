@@ -100,9 +100,9 @@ const { title, role, company, teamSize } = Astro.props;
 
 ```yaml
 ---
-title: "Payment System Rebuild"
-role: "Lead Engineer"
-company: "Acme Corp"
+title: "Project title"
+role: "Contributor"
+company: "Organization name"
 teamSize: 4
 ---
 ```

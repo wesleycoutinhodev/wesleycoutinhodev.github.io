@@ -1,38 +1,42 @@
-# Wesley Coutinho - Portfolio
+# Wesley Coutinho — Software Engineering Portfolio
 
 Site: https://wesleycoutinhodev.me
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Portfolio pessoal com estudos de caso, stack de ferramentas, artigos e informacoes de contato.
+Personal portfolio for Wesley Coutinho, a Backend Software Engineer working with Python, FastAPI, distributed systems, reliability and Applied AI.
 
-## Sobre
+## About
 
-Este repositorio contem o codigo do meu site de portfolio. O foco e apresentar projetos como estudos de caso (problema, abordagem, decisoes e impacto) e deixar claro o meu processo de trabalho em backend, arquitetura e IA aplicada.
+This repository contains the source code for my engineering portfolio. The site presents selected projects as case studies, focusing on technical problems, implementation choices, trade-offs and concrete outcomes.
 
-## Conteudo
+My current professional direction follows this hierarchy:
 
-- Projects: estudos de caso em `src/content/projects`
-- Uses: stack e ambiente em `src/content/uses`
-- Writing: artigos em `src/content/writing`
-- Pages: paginas em `src/pages`
+**Backend Engineering → Distributed Systems → Reliability → Applied AI**
 
-## Rodando localmente
+## Content
+
+- Projects and engineering case studies: `src/content/projects`
+- Tools, technology stack and environment: `src/content/uses`
+- Public pages and site structure: `src/pages`
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Site local em [http://localhost:4321](http://localhost:4321)
+The development server runs at [http://localhost:4321](http://localhost:4321).
 
 ## Scripts
 
-- `npm run dev` - servidor de desenvolvimento
-- `npm run build` - build de producao
-- `npm run preview` - preview do build
+- `npm run dev` — start the local development server
+- `npm run build` — run Astro checks, create the production build and audit the public output
+- `npm run preview` — preview the production build locally
+- `npm run verify:public` — re-run the public audit against an existing `dist` build
 
 ## License
 
-Este projeto usa a licenca MIT. Veja [LICENSE](./LICENSE).
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).

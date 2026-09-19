@@ -4,7 +4,7 @@
  * 
  * Dynamic route that displays a comprehensive project case study following a structured
  * narrative format. Presents the complete story of a project from problem identification
- * through to measurable impact and learnings.
+ * through to concrete outcomes and learnings.
  * 
  * Narrative Structure (enforced order):
  * 1. Overview - High-level project summary
@@ -89,7 +89,6 @@ const {
   impact,
   learnings,
   relatedProjects,
-  relatedDecisions,
   status,
 } = project.data;
 
@@ -274,8 +273,7 @@ const readingTime = formatReadingTime(calculateReadingTime(allText));
 
     <!-- Related Content -->
     <RelatedContent 
-      relatedProjects={relatedProjects} 
-      relatedDecisions={relatedDecisions} 
+      relatedProjects={relatedProjects}
     />
 
     <BackLink href="/projects" text="All projects" />

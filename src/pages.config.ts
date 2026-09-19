@@ -45,8 +45,8 @@ interface PageMeta {
 /**
  * Pages configuration object
  * 
- * Contains metadata for all static pages. Dynamic pages (like individual
- * project or article pages) generate their own metadata from content.
+ * Contains metadata for all static pages. Individual project pages generate
+ * their metadata from content.
  */
 export const pagesConfig = {
   /**
@@ -54,77 +54,37 @@ export const pagesConfig = {
    * Note: Home page uses siteConfig for title/description as it represents the site itself
    */
   home: {
-    title: 'Inicio',
-    description: 'Desenvolvedor backend focado em arquitetura completa do codigo ao deploy, integrando RAG, LLM e automacoes.',
+    title: 'Home',
+    description: 'Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI.',
   },
   
   /**
    * Projects listing page (/projects)
    */
   projects: {
-    title: 'Projetos - Estudos de Caso',
-    description: 'Estudos de caso detalhados mostrando abordagem de solucao de problemas, decisoes tecnicas e impacto mensuravel.',
-    heading: 'Projetos',
-    intro: 'Estudos de caso que mostram como abordo problemas complexos, tomo decisoes tecnicas e entrego impacto mensuravel. Cada projeto conta o desafio, as restricoes, as decisoes e os resultados.',
-  },
-  
-  /**
-   * Decisions listing page (/decisions)
-   */
-  decisions: {
-    title: 'Decisoes - Arquitetura e Tecnologia',
-    description: 'Registro de decisoes arquiteturais e tecnicas, documentando contexto, alternativas e raciocinio por tras das escolhas.',
-    heading: 'Decisoes',
-    intro: 'Um registro transparente das decisoes arquiteturais e tecnicas que tomei. Cada entrada documenta o contexto, alternativas consideradas e o raciocinio por tras da escolha.',
-  },
-  
-  /**
-   * Journey timeline page (/journey)
-   */
-  journey: {
-    title: 'Jornada - Linha do Tempo de Carreira',
-    description: 'Linha do tempo da minha jornada profissional, com marcos, aprendizados e transicoes que moldaram minha evolucao.',
-    heading: 'Jornada',
-    intro: 'Uma linha do tempo da minha evolucao profissional e de aprendizado. Nao e um curriculo - e a historia de como meu pensamento evoluiu e das habilidades que desenvolvi.',
-  },
-  
-  /**
-   * Writing/blog listing page (/writing)
-   */
-  writing: {
-    title: 'Escrita - Artigos Tecnicos',
-    description: 'Artigos tecnicos, insights e licoes aprendidas ao construir sistemas e resolver desafios de engenharia.',
-    heading: 'Escrita',
-    intro: 'Artigos tecnicos, insights e licoes aprendidas ao construir sistemas. Escrevo sobre decisoes de arquitetura, praticas de engenharia e desafios de confiabilidade em escala.',
-  },
-
-  /**
-   * Speaking engagements page (/speaking)
-   */
-  speaking: {
-    title: 'Palestras - Talks e Apresentacoes',
-    description: 'Palestras, meetups, podcasts e workshops sobre engenharia de software, arquitetura e lideranca tecnica.',
-    heading: 'Palestras',
-    intro: 'Apresentacoes em conferencias, meetups e podcasts sobre arquitetura de software, praticas de engenharia e lideranca tecnica. Aqui esta uma selecao dos meus talks.',
+    title: 'Projects - Engineering Case Studies',
+    description: 'Engineering case studies covering backend systems, distributed processing, cloud infrastructure and applied AI integration.',
+    heading: 'Projects',
+    intro: 'Engineering case studies showing how I approach technical problems, evaluate trade-offs and turn requirements into working systems.',
   },
   
   /**
    * Uses/tools page (/uses)
    */
   uses: {
-    title: 'Uses - Ferramentas, Stack e Ambiente',
-    description: 'Lista das ferramentas, tecnologias e ambiente que uso no dia a dia de desenvolvimento.',
-    heading: 'Ferramentas',
-    intro: 'Uma visao transparente das ferramentas, tecnologias e ambiente que sustentam meu fluxo de trabalho. Aqui documento o que uso e por que.',
+    title: 'Uses - Tools, Stack and Environment',
+    description: 'Tools, technologies and environments I use for backend software engineering.',
+    heading: 'Uses',
+    intro: 'A practical overview of the tools, technologies and environments that support my development workflow.',
   },
   
   /**
    * Contact page (/contact)
    */
   contact: {
-    title: 'Contato - Vamos Conversar',
-    description: 'Entre em contato para discutir oportunidades, colaboracoes ou desafios tecnicos.',
-    heading: 'Vamos Conversar',
+    title: 'Contact - Get in Touch',
+    description: 'Get in touch to discuss backend software engineering opportunities, collaborations or technical challenges.',
+    heading: 'Get in Touch',
   },
 } as const;
 

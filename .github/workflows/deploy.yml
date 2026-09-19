@@ -25,14 +25,8 @@ jobs:
       name: .env
     env:
       SITE_URL: ${{ secrets.SITE_URL }}
-      SITE_LANGUAGE: ${{ secrets.SITE_LANGUAGE }}
-      SITE_TITLE: ${{ secrets.SITE_TITLE }}
-      SITE_DESCRIPTION: ${{ secrets.SITE_DESCRIPTION }}
       SITE_AUTHOR_NAME: ${{ secrets.SITE_AUTHOR_NAME }}
-      SITE_AUTHOR_TITLE: ${{ secrets.SITE_AUTHOR_TITLE }}
-      SITE_AUTHOR_BIO: ${{ secrets.SITE_AUTHOR_BIO }}
       SITE_AUTHOR_EMAIL: ${{ secrets.SITE_AUTHOR_EMAIL }}
-      SITE_AUTHOR_LOCATION: ${{ secrets.SITE_AUTHOR_LOCATION }}
       SOCIAL_GITHUB: ${{ secrets.SOCIAL_GITHUB }}
       SOCIAL_LINKEDIN: ${{ secrets.SOCIAL_LINKEDIN }}
       SOCIAL_TWITTER: ${{ secrets.SOCIAL_TWITTER }}

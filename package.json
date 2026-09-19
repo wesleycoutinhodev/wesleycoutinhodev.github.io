@@ -19,8 +19,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/verify-public-content.mjs",
     "preview": "astro preview",
+    "verify:public": "node scripts/verify-public-content.mjs",
     "astro": "astro"
   },
   "dependencies": {

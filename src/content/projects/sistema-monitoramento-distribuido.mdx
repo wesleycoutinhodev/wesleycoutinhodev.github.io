@@ -1,20 +1,20 @@
 ---
-title: "Sistema de Monitoramento Distribuido"
-role: "Desenvolvedor Backend / Arquiteto de Sistemas"
+title: "Distributed Systems Monitoring"
+role: "Backend Developer / Distributed Systems"
 year: 2025
-outcomeSummary: "Coleta de metricas em tempo real com arquitetura pub/sub e pipeline pronto para escalar."
-overview: "Solucao distribuida para coletar e monitorar metricas (CPU, RAM, uptime) em tempo real."
-problem: "Centralizar dados de performance de sistemas dispersos de forma continua e sem sobrecarga."
+outcomeSummary: "Collected and streamed system metrics in real time through MQTT-based publish/subscribe services running in Docker Compose."
+overview: "A distributed monitoring project for collecting CPU, memory and uptime metrics from multiple services in real time."
+problem: "Centralize continuous performance data from separate systems without tightly coupling producers and consumers."
 constraints:
-  - "Comunicacao assincrona e baixa latencia."
-  - "Escalabilidade e manutencao simples dos consumidores."
-  - "Ambiente conteinerizado para reproducao do sistema."
-approach: "Pipeline de streaming com MQTT em pub/sub e servicos conteinerizados com Docker e Docker Compose."
+  - "Asynchronous communication with low delivery latency."
+  - "Independent maintenance of metric producers and consumers."
+  - "A reproducible containerized multi-service environment."
+approach: "Built an MQTT publish/subscribe pipeline with Python services running in a containerized multi-service environment managed through Docker Compose."
 keyDecisions:
-  - decision: "MQTT (Eclipse Mosquitto) para pub/sub."
-    reasoning: "Protocolo leve ideal para streaming continuo de metricas."
-  - decision: "Docker Compose para orquestrar servicos."
-    reasoning: "Padroniza ambientes e acelera testes de integracao."
+  - decision: "Use MQTT with Eclipse Mosquitto for publish/subscribe communication."
+    reasoning: "The lightweight protocol fits continuous metric delivery and keeps data producers decoupled from consumers."
+  - decision: "Run the services with Docker Compose."
+    reasoning: "A shared multi-service configuration made the environment reproducible and simplified integration testing."
 techStack:
   - "Python"
   - "MQTT (Eclipse Mosquitto)"
@@ -22,11 +22,11 @@ techStack:
   - "Docker Compose"
   - "Linux"
 impact:
-  qualitative: "Estrutura modular e escalavel que simula ambientes de nuvem reais."
+  qualitative: "Demonstrated end-to-end metric collection and delivery across decoupled services in a reproducible containerized environment."
 learnings:
-  - "Comunicacao assincrona e streaming de dados."
-  - "Estruturacao modular de microsservicos."
-  - "Orquestracao avancada de containers."
+  - "Asynchronous communication and real-time data streaming."
+  - "Clear service boundaries in a distributed workflow."
+  - "Multi-service integration with Docker Compose."
 featured: true
 status: completed
 order: 2

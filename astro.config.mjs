@@ -69,9 +69,9 @@ export default defineConfig({
    * - Open Graph tags
    * - RSS feeds
    * 
-   * Set SITE_URL in your .env file (e.g., https://example.com)
+   * Set SITE_URL in your .env file to override the production domain.
    */
-  site: SITE_URL || 'https://example.com',
+  site: SITE_URL || 'https://wesleycoutinhodev.me',
   
   /**
    * Environment variables schema (Astro v5+)
@@ -87,17 +87,17 @@ export default defineConfig({
   env: {
     schema: {
       // Site configuration
-      SITE_URL: envField.string({ context: 'client', access: 'public', default: 'https://example.com' }),
+      SITE_URL: envField.string({ context: 'client', access: 'public', default: 'https://wesleycoutinhodev.me' }),
       SITE_LANGUAGE: envField.string({ context: 'client', access: 'public', default: 'en' }),
-      SITE_TITLE: envField.string({ context: 'client', access: 'public', default: 'Professional Portfolio' }),
-      SITE_DESCRIPTION: envField.string({ context: 'client', access: 'public', default: 'Engineering leader specializing in system architecture, technical decision-making, and delivering measurable business impact.' }),
+      SITE_TITLE: envField.string({ context: 'client', access: 'public', default: 'Wesley Coutinho - Backend Software Engineer | Python & Distributed Systems' }),
+      SITE_DESCRIPTION: envField.string({ context: 'client', access: 'public', default: 'Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI. Engineering case studies covering backend systems, cloud infrastructure and AI integration.' }),
       
       // Author information
-      SITE_AUTHOR_NAME: envField.string({ context: 'client', access: 'public', default: 'Your Name' }),
-      SITE_AUTHOR_TITLE: envField.string({ context: 'client', access: 'public', default: 'Senior Software Engineer' }),
-      SITE_AUTHOR_BIO: envField.string({ context: 'client', access: 'public', default: 'Engineering leader focused on solving complex technical challenges through thoughtful architecture and pragmatic trade-off analysis.' }),
-      SITE_AUTHOR_EMAIL: envField.string({ context: 'client', access: 'public', default: 'hello@example.com' }),
-      SITE_AUTHOR_LOCATION: envField.string({ context: 'client', access: 'public', default: '' }),
+      SITE_AUTHOR_NAME: envField.string({ context: 'client', access: 'public', default: 'Wesley Coutinho' }),
+      SITE_AUTHOR_TITLE: envField.string({ context: 'client', access: 'public', default: 'Backend Software Engineer' }),
+      SITE_AUTHOR_BIO: envField.string({ context: 'client', access: 'public', default: 'Backend Software Engineer and Computer Science student focused on distributed systems, reliability and applied AI.' }),
+      SITE_AUTHOR_EMAIL: envField.string({ context: 'client', access: 'public', default: 'hello@wesleycoutinhodev.me' }),
+      SITE_AUTHOR_LOCATION: envField.string({ context: 'client', access: 'public', default: 'Teresina, Piauí, Brazil' }),
       
       // Social media links (empty string = hidden)
       SOCIAL_GITHUB: envField.string({ context: 'client', access: 'public', default: '' }),

@@ -10,7 +10,7 @@ Copy `.env.example` to `.env` and configure:
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `SITE_URL` | Yes | `https://example.com` | Production URL (for sitemap, OG tags) |
+| `SITE_URL` | Yes | `https://wesleycoutinhodev.me` | Production URL (for sitemap, OG tags) |
 | `SITE_LANGUAGE` | No | `en` | ISO 639-1 code (e.g., `en`, `id`, `de`) |
 | `SITE_TITLE` | No | `Professional Portfolio` | Site title for SEO |
 | `SITE_DESCRIPTION` | No | - | Default meta description |
@@ -20,7 +20,7 @@ Copy `.env.example` to `.env` and configure:
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `SITE_AUTHOR_NAME` | Yes | `Your Name` | Your full name |
-| `SITE_AUTHOR_TITLE` | Yes | `Senior Software Engineer` | Your job title |
+| `SITE_AUTHOR_TITLE` | Yes | `Backend Software Engineer` | Your positioning title |
 | `SITE_AUTHOR_BIO` | No | - | Short professional bio |
 | `SITE_AUTHOR_EMAIL` | Yes | `hello@example.com` | Contact email |
 | `SITE_AUTHOR_LOCATION` | No | - | Your location (leave empty to hide) |
@@ -46,7 +46,7 @@ SITE_LANGUAGE=en
 
 SITE_AUTHOR_NAME="John Doe"
 SITE_AUTHOR_TITLE="Staff Software Engineer"
-SITE_AUTHOR_BIO="Building distributed systems at scale."
+SITE_AUTHOR_BIO="Building reliable backend systems."
 SITE_AUTHOR_EMAIL=hello@johndoe.dev
 SITE_AUTHOR_LOCATION="San Francisco, CA"
 

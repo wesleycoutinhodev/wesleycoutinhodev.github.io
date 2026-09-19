@@ -37,7 +37,7 @@ export const siteConfig = {
    * Should be the full production URL without trailing slash.
    * Example: 'https://example.com'
    */
-  url: getEnv('SITE_URL', 'https://example.com'),
+  url: getEnv('SITE_URL', 'https://wesleycoutinhodev.me'),
   
   /**
    * Site language (ISO 639-1 code)
@@ -45,21 +45,21 @@ export const siteConfig = {
    * Two-letter language code for HTML lang attribute and SEO.
    * Examples: 'en', 'id', 'es', 'fr'
    */
-  language: getEnv('SITE_LANGUAGE', 'pt'),
+  language: getEnv('SITE_LANGUAGE', 'en'),
   
   /**
    * Site title
    * 
    * Used as fallback when page-specific title is not provided.
    */
-  title: getEnv('SITE_TITLE', 'Wesley Coutinho | Desenvolvedor Backend'),
+  title: getEnv('SITE_TITLE', 'Wesley Coutinho - Backend Software Engineer | Python & Distributed Systems'),
   
   /**
    * Site description
    * 
    * Default meta description for SEO and social sharing.
    */
-  description: getEnv('SITE_DESCRIPTION', 'Desenvolvedor backend focado em arquitetura de ponta a ponta, do codigo ao deploy, com integracao de RAG, LLM e automacoes.'),
+  description: getEnv('SITE_DESCRIPTION', 'Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI. Engineering case studies covering backend systems, cloud infrastructure and AI integration.'),
   
   /**
    * Author information
@@ -72,16 +72,16 @@ export const siteConfig = {
     name: getEnv('SITE_AUTHOR_NAME', 'Wesley Coutinho'),
     
     /** Professional title or role */
-    title: getEnv('SITE_AUTHOR_TITLE', 'Desenvolvedor Backend | Arquitetura de Software e IA aplicada (RAG/LLM)'),
+    title: getEnv('SITE_AUTHOR_TITLE', 'Backend Software Engineer'),
     
     /** Short biography or professional summary */
-    bio: getEnv('SITE_AUTHOR_BIO', 'Desenvolvedor backend focado em arquitetura de ponta a ponta, do codigo ao deploy, com integracao de RAG, LLM e automacoes. Experiencia com APIs em Python (FastAPI) e Java, e infraestrutura com Docker e AWS.'),
+    bio: getEnv('SITE_AUTHOR_BIO', 'Backend Software Engineer and Computer Science student focused on distributed systems, reliability and applied AI.'),
     
     /** Contact email address */
     email: getEnv('SITE_AUTHOR_EMAIL', 'wesleycoutinhodev@gmail.com'),
     
     /** Location (optional, empty string to hide) */
-    location: getEnv('SITE_AUTHOR_LOCATION', 'Teresina, Piaui, Brasil'),
+    location: getEnv('SITE_AUTHOR_LOCATION', 'Teresina, Piauí, Brazil'),
   },
   
   /**
@@ -114,10 +114,9 @@ export const siteConfig = {
    * Add or remove items to customize navigation.
    */
   nav: [
-    { label: 'Projetos', href: '/projects' },
-    { label: 'Artigos', href: '/writing' },
-    { label: 'Ferramentas', href: '/uses' },
-    { label: 'Contato', href: '/contact' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Uses', href: '/uses' },
+    { label: 'Contact', href: '/contact' },
   ],
 } as const;
 

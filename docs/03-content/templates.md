@@ -29,7 +29,7 @@ techStack:
 impact:
   metrics:
     - label: "Metric Name"
-      value: "Metric Value (e.g., 50% improvement)"
+      value: "Evidence-backed result"
   qualitative: "Broader impact beyond the numbers"
 learnings:
   - "Key lesson learned from this project"

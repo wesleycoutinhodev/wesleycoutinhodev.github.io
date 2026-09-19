@@ -16,7 +16,7 @@ If your content doesn't match the schema, the build will fail with clear error m
 
 Use kebab-case for file names:
 - ✅ `payment-system-rebuild.mdx`
-- ❌ `Payment System Rebuild.mdx`
+- ❌ `My Project File.mdx`
 
 The filename becomes the URL slug (e.g., `/projects/payment-system-rebuild`).
 

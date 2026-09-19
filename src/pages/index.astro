@@ -15,14 +15,13 @@
  * Sections:
  * 1. Hero - Value statement with featured case study snapshots
  * 2. Introduction - Brief personal introduction
- * 3. Testimonials - Social proof from colleagues and clients
+ * 3. Experience - Concise professional background
  * 4. Thinking - Problems and topics of interest
  * 5. CTA - Call-to-action for work opportunities
  * 
  * Features:
  * - Featured projects showcase (top 2-3)
  * - Curated project snapshots
- * - Testimonials integration
  * - Structured data for SEO (WebSite and Person)
  * - Responsive grid layout
  * - Multiple CTAs for different user intents
@@ -35,7 +34,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
 import StructuredData from '../components/StructuredData.astro';
-import Testimonials from '../components/Testimonials.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../config';
 
@@ -64,7 +62,7 @@ const caseSnapshots = featuredProjects.slice(0, 3);
 <BaseLayout>
   <SEO 
     slot="head"
-    title={`${siteConfig.author.name} - ${siteConfig.author.title}`}
+    title={siteConfig.title}
     description={siteConfig.description}
     type="website"
     noSuffix
@@ -75,33 +73,33 @@ const caseSnapshots = featuredProjects.slice(0, 3);
   <StructuredData type="Person" />
 
   <main class="home-page">
-    <!-- CASE-FIRST HERO -->
     <section class="hero">
       <div class="hero-grid">
-        <!-- Left: Value Statement -->
         <div class="hero-left">
+          <p class="eyebrow">BACKEND SOFTWARE ENGINEER</p>
           <h1 class="hero-title">
-            Do código ao deploy.<br/>
-            <span class="hero-title-emphasis">Nenhuma decisão é tomada por acaso.
-</span>
+            I build backend systems that stay reliable beyond the happy path.
           </h1>
           <p class="hero-sub">
-            Um portfolio construido em estudos de caso, nao em screenshots.
+            Backend Software Engineer focused on Python, FastAPI, distributed systems and applied AI — from API design and event-driven processing to deployment and reliability.
           </p>
-          <p class="hero-meta">
-            {siteConfig.author.name} · {siteConfig.author.title}
+          <p class="hero-technologies">
+            Python · FastAPI · PostgreSQL · Redis · Docker · Distributed Systems
           </p>
           <div class="hero-cta">
-            <a href="/projects" class="btn-primary">Ver projetos</a>
+            <a href="/projects" class="btn-primary">View Case Studies</a>
+            {siteConfig.social.github && (
+              <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
+            )}
           </div>
         </div>
 
-        <!-- Right: Case Snapshots -->
         <div class="hero-right">
+          <h2 class="section-label">Featured Work</h2>
           <div class="case-snapshots">
             {caseSnapshots.map((project) => (
               <a href={`/projects/${project.id}`} class="case-snapshot">
-                <span class="case-label">Case · {project.data.role}</span>
+                <span class="case-label">Case Study · {project.data.role}</span>
                 <span class="case-title">{project.data.title}</span>
                 <span class="case-outcome">{project.data.outcomeSummary}</span>
               </a>
@@ -111,36 +109,67 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       </div>
     </section>
 
-    <!-- Introduction -->
-    <section class="introduction">
+    <section class="introduction" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
       <p>
-        Sou {siteConfig.author.name}, desenvolvedor backend focado em arquitetura de ponta a ponta, do codigo ao deploy, com foco em integração de RAG, LLM e automaçoes.
+        I'm {siteConfig.author.name}, a Backend Software Engineer and Computer Science student focused on distributed systems, reliability and applied AI.
       </p>
       <p>
-        Gosto de transformar problemas complexos em solucoes simples e bem documentadas.
+        I work primarily with Python, FastAPI, PostgreSQL, Redis and Docker, building backend services and integrating systems that need to process data reliably across different components.
+      </p>
+      <p>
+        My current professional work combines backend engineering, distributed processing and real-time computer vision.
       </p>
     </section>
 
-    <!-- Testimonials -->
-    <Testimonials limit={3} />
+    <section class="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <div class="experience-list">
+        <article class="experience-item experience-item--primary">
+          <div class="experience-header">
+            <div>
+              <h3>STRANS - Superintendência Municipal de Transportes e Trânsito</h3>
+              <p class="experience-role">IT Intern — Software Engineering &amp; Computer Vision</p>
+            </div>
+            <p class="experience-period">April 2026 — Present</p>
+          </div>
+          <p class="experience-summary">
+            I contribute to an intelligent traffic monitoring platform by building Python and FastAPI services, PostgreSQL data flows and Redis-based event processing. My work also covers reliability mechanisms, infrastructure and the integration of real-time computer vision pipelines using YOLO, OCR and RTSP.
+          </p>
+          <p class="experience-stack">Python · FastAPI · PostgreSQL · Redis · Docker · MinIO/S3 · Pytest · YOLO · OCR · RTSP</p>
+        </article>
 
-    <!-- What I Think About -->
+        <article class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3>Digzen Automações B2B</h3>
+              <p class="experience-role">Chatbot Developer</p>
+            </div>
+            <p class="experience-period">October 2025 — December 2025</p>
+          </div>
+          <p class="experience-summary">
+            I built an AI-powered conversational workflow for lead qualification, integrating the OpenAI API, n8n and external services to automate operational steps such as meeting scheduling.
+          </p>
+          <p class="experience-stack">OpenAI API · n8n · API Integration · LLMs · Automation</p>
+        </article>
+      </div>
+    </section>
+
     <section class="thinking">
-      <h2>Problemas que gosto de resolver</h2>
+      <h2>Problems I like to solve</h2>
       <p class="thinking-list">
-        Arquitetura backend de ponta a ponta · RAG e LLM em producao · Integracoes de dados e APIs · Observabilidade e resiliencia · Automacoes e pipelines de deploy · Evolucao de sistemas sem parar a entrega
+        Distributed backend systems · Event-driven processing · Reliability and failure recovery · API and service integration · Data persistence and consistency · Applied AI integration · Systems that evolve without unnecessary coupling
       </p>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
-      <h2>Vamos trabalhar juntos</h2>
+      <h2>Let's build reliable systems</h2>
       <p>
-        Aberto a oportunidades em backend e IA aplicada. Vamos conversar.
+        I'm open to backend software engineering opportunities involving distributed systems, reliability and applied AI.
       </p>
       <div class="cta-buttons">
-        <a href="/projects" class="btn-primary">Ver projetos</a>
-        <a href="/contact" class="btn-secondary">Contato</a>
+        <a href="/projects" class="btn-primary">View Case Studies</a>
+        <a href="/contact" class="btn-secondary">Get in Touch</a>
       </div>
     </section>
   </main>
@@ -169,6 +198,16 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       padding-right: 2rem;
     }
 
+    .eyebrow,
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+
     .hero-title {
       font-size: 2.25rem;
       line-height: 1.3;
@@ -178,10 +217,6 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       color: var(--color-text);
     }
 
-    .hero-title-emphasis {
-      color: var(--color-text-secondary);
-    }
-
     .hero-sub {
       font-size: 1.125rem;
       color: var(--color-text-secondary);
@@ -189,11 +224,11 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       line-height: 1.6;
     }
 
-    .hero-meta {
+    .hero-technologies {
       font-size: 0.875rem;
       color: var(--color-text-muted);
       margin-bottom: 2rem;
-      letter-spacing: 0.01em;
+      line-height: 1.7;
     }
 
     .hero-cta {
@@ -293,23 +328,82 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       color: var(--color-text-secondary);
     }
 
-    .introduction p {
-      margin-bottom: 1rem;
-    }
-
-    .introduction p:first-child {
-      color: var(--color-text);
-    }
-
-    .thinking {
-      margin-bottom: 5rem;
-    }
-
+    .introduction h2,
+    .experience h2,
     .thinking h2 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 1.25rem;
       letter-spacing: -0.01em;
+    }
+
+    .introduction p {
+      margin-bottom: 1rem;
+    }
+
+    .introduction p:first-of-type {
+      color: var(--color-text);
+    }
+
+    .experience,
+    .thinking {
+      margin-bottom: 5rem;
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .experience-item {
+      padding: 1.5rem;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+
+    .experience-item--primary {
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.375rem;
+    }
+
+    .experience-role,
+    .experience-period,
+    .experience-stack {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .experience-period {
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .experience-summary {
+      max-width: 760px;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .experience-stack {
+      line-height: 1.6;
     }
 
     .thinking-list {
@@ -382,6 +476,19 @@ const caseSnapshots = featuredProjects.slice(0, 3);
 
       .introduction {
         font-size: 1rem;
+      }
+
+      .experience-item {
+        padding: 1.25rem;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .experience-period {
+        text-align: left;
       }
 
       .cta-buttons {

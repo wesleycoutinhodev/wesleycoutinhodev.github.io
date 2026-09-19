@@ -1,22 +1,21 @@
 ---
-title: "Notebook LM - Plataforma Inteligente com IA Generativa"
-role: "Desenvolvedor Backend / Integracao de IA"
+title: "NotebookLM-inspired AI Document Platform"
+role: "Backend Developer / AI Integration"
 year: 2025
-duration: "2 semanas"
-outcomeSummary: "Plataforma RAG para analisar documentos com respostas contextualizadas e base tecnica pronta para escalar."
-overview: "Projeto academico full-stack inspirado no NotebookLM, com microsservicos, front em React e backend em FastAPI."
-problem: "Extrair informacoes precisas e contextualizadas de documentos complexos, reduzindo alucinacoes de modelos de IA."
+duration: "2 weeks"
+outcomeSummary: "Academic team project combining FastAPI, PostgreSQL, Docker, AWS and generative AI for document processing and summarization."
+overview: "A containerized application inspired by NotebookLM, with a React frontend, FastAPI backend, PostgreSQL persistence and generative AI integration."
+problem: "Create a workflow for extracting and summarizing information from uploaded documents while keeping responses grounded in the available material."
 constraints:
-  - "Processamento eficiente de dados e consultas."
-  - "Infraestrutura versionada e conteinerizada para deploy em nuvem."
-approach: "Arquitetura RAG com LangChain e APIs de IA generativa, modelagem de dados em PostgreSQL e conteinerizacao completa para deploy na AWS."
+  - "Coordinate document processing, persistence and AI requests across application components."
+  - "Keep local and cloud environments reproducible through containers and versioned configuration."
+approach: "Combined a FastAPI backend, PostgreSQL data model and LangChain-based document workflow in a containerized application architecture deployed on AWS."
 keyDecisions:
-  - decision: "FastAPI como base do backend."
-    reasoning: "Alta performance para integracoes assincronas de IA e APIs."
-    tradeOff: "Nao e o padrao do mercado em relacao a frameworks mais estabelecidos em ecossistemas corporativos."
-  - decision: "Docker para paridade de ambientes."
-    reasoning: "Reproducao local fiel e pipeline de deploy mais confiavel."
-    tradeOff: "Complexidade na configuracao inicial, mas compensa no deploy e portabilidade."
+  - decision: "Use FastAPI as the backend framework."
+    reasoning: "Its typed request models and asynchronous support fit the API and AI integration workflow."
+  - decision: "Use Docker for environment parity."
+    reasoning: "A shared container configuration kept local development and deployment environments consistent across the team."
+    tradeOff: "The initial setup added configuration work, but reduced environment-specific differences later."
 techStack:
   - "Python"
   - "FastAPI"
@@ -26,11 +25,11 @@ techStack:
   - "AWS"
   - "React"
 impact:
-  qualitative: "Acelerou a analise e sumarizacao de documentos complexos com arquitetura pronta para escalar."
+  qualitative: "Delivered a working academic prototype connecting document ingestion, relational persistence and AI-assisted summarization in a reproducible containerized environment."
 learnings:
-  - "Arquiteturas RAG aplicadas a documentos complexos."
-  - "Orquestracao de banco relacional e integracao com IA."
-  - "Conteinerizacao e deploy em nuvem."
+  - "Grounding generative AI responses in uploaded document context."
+  - "Coordinating relational persistence with an AI processing workflow."
+  - "Containerized deployment and environment parity."
 featured: true
 status: completed
 order: 1

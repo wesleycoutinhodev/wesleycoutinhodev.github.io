@@ -85,17 +85,17 @@ order: 5   # Third position
 
 ### Metrics That Matter
 
-Good metrics are:
-- **Specific:** "60% reduction" not "significant improvement"
-- **Contextual:** "from 2.5s to 1s" shows before/after
-- **Business-relevant:** Connect technical wins to outcomes
+Only publish metrics that can be substantiated. Good evidence is:
+- **Specific:** State the observed outcome without inflating its scope
+- **Contextual:** Explain how the result was assessed
+- **Relevant:** Connect technical work to a concrete outcome
 
 ```yaml
 metrics:
-  - label: "Processing Time"
-    value: "60% reduction (from 2.5s to 1s)"
-  - label: "Error Rate"
-    value: "0.1% (down from 2.3%)"
+  - label: "Integration"
+    value: "Upload flow connected to the main platform"
+  - label: "Validation"
+    value: "Accepted types and size limits documented"
 ```
 
 ### Decisions Section

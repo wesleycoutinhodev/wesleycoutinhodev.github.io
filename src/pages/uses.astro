@@ -68,9 +68,9 @@ const groupedByCategory = sortedUses.reduce((acc, entry) => {
  * providing context about what each category contains.
  */
 const categoryInfo = {
-  tools: { title: 'Ferramentas', description: 'Softwares e aplicativos que uso no dia a dia' },
-  stack: { title: 'Stack', description: 'Tecnologias e frameworks com que trabalho' },
-  environment: { title: 'Ambiente', description: 'Hardware e configuracoes do workspace' },
+  tools: { title: 'Tools', description: 'Software and applications I use in my daily workflow' },
+  stack: { title: 'Stack', description: 'Technologies and frameworks I use to build backend systems' },
+  environment: { title: 'Environment', description: 'Operating systems and development environments' },
 };
 
 /**
@@ -134,7 +134,7 @@ const categoryOrder: Array<'tools' | 'stack' | 'environment'> = ['tools', 'stack
     })}
 
     {sortedUses.length === 0 && (
-      <p class="empty-state">Nenhum item documentado ainda.</p>
+      <p class="empty-state">No items documented yet.</p>
     )}
   </main>
 
