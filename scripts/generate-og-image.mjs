@@ -17,23 +17,23 @@ const svg = `
   <rect x="64" y="64" width="1072" height="502" rx="12" fill="#111111" stroke="#262626" />
 
   <text x="104" y="124" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.4">WESLEY COUTINHO</text>
-  <text x="1096" y="124" text-anchor="end" fill="#3b82f6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.4">BACKEND SOFTWARE ENGINEER</text>
+  <text x="1096" y="124" text-anchor="end" fill="#3b82f6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.4">AI ENGINEER</text>
 
   <line x1="104" y1="158" x2="1096" y2="158" stroke="#262626" />
 
   <text x="104" y="246" fill="url(#headline)" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="-1.6">
-    <tspan x="104" dy="0">I build backend systems that stay</tspan>
-    <tspan x="104" dy="68">reliable beyond the happy path.</tspan>
+    <tspan x="104" dy="0">I build AI systems you can</tspan>
+    <tspan x="104" dy="68">measure, test and trust.</tspan>
   </text>
 
   <text x="104" y="404" fill="#a3a3a3" font-family="Arial, Helvetica, sans-serif" font-size="24">
-    Python · FastAPI · PostgreSQL · Redis · Docker · Distributed Systems
+    LLMs · RAG · AI Agents · Machine Learning · Python · FastAPI
   </text>
 
   <rect x="104" y="454" width="342" height="48" rx="6" fill="#e5e5e5" />
-  <text x="275" y="485" text-anchor="middle" fill="#0a0a0a" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">BACKEND ENGINEERING</text>
+  <text x="275" y="485" text-anchor="middle" fill="#0a0a0a" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">AI ENGINEERING</text>
 
-  <text x="1096" y="485" text-anchor="end" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="17">Distributed Systems → Reliability → Applied AI</text>
+  <text x="1096" y="485" text-anchor="end" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="17">Software Engineering → LLMs → Evaluation</text>
 </svg>`;
 
 await sharp(Buffer.from(svg))

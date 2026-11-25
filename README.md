@@ -1,19 +1,19 @@
-# Wesley Coutinho — Software Engineering Portfolio
+# Wesley Coutinho — AI Engineering Portfolio
 
 Site: https://wesleycoutinhodev.me
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Personal portfolio for Wesley Coutinho, a Backend Software Engineer working with Python, FastAPI, distributed systems, reliability and Applied AI.
+Personal portfolio for Wesley Coutinho, an AI Engineer who builds AI systems you can measure, test and trust: LLM applications, RAG and machine learning, backed by solid software engineering in Python.
 
 ## About
 
-This repository contains the source code for my engineering portfolio. The site presents selected projects as case studies, focusing on technical problems, implementation choices, trade-offs and concrete outcomes.
+This repository contains the source code for my portfolio. The site presents selected projects as case studies, covering the problem, implementation choices, trade-offs, how results were measured and their limitations.
 
-My current professional direction follows this hierarchy:
+Focus areas:
 
-**Backend Engineering → Distributed Systems → Reliability → Applied AI**
+**LLM applications & RAG → Machine Learning → Engineering for AI systems**
 
 ## Content
 

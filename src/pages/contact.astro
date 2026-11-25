@@ -23,7 +23,7 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
-import { siteConfig } from '../config';
+import { siteConfig, socialLabels } from '../config';
 import { pagesConfig } from '../pages.config';
 
 /**
@@ -37,7 +37,7 @@ import { pagesConfig } from '../pages.config';
 const socialLinks = Object.entries(siteConfig.social)
   .filter(([_, url]) => url)
   .map(([platform, url]) => ({
-    platform: platform.charAt(0).toUpperCase() + platform.slice(1),
+    platform: socialLabels[platform] ?? platform.charAt(0).toUpperCase() + platform.slice(1),
     url
   }));
 ---
@@ -58,7 +58,7 @@ const socialLinks = Object.entries(siteConfig.social)
         {siteConfig.author.email}
       </a>
       <p class="context">
-        I read every email and will get back to you as soon as possible.
+        Open to AI Engineering and Software Engineering roles. I read every email and reply as soon as I can.
       </p>
     </section>
 

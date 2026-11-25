@@ -16,7 +16,7 @@
  * <Footer />
  * ```
  */
-import { siteConfig } from '../config';
+import { siteConfig, socialLabels } from '../config';
 
 /**
  * Gets the current year for copyright display
@@ -34,7 +34,7 @@ const currentYear = new Date().getFullYear();
 const socialLinks = Object.entries(siteConfig.social)
   .filter(([_, url]) => url)
   .map(([platform, url]) => ({
-    platform: platform.charAt(0).toUpperCase() + platform.slice(1),
+    platform: socialLabels[platform] ?? platform.charAt(0).toUpperCase() + platform.slice(1),
     url
   }));
 ---

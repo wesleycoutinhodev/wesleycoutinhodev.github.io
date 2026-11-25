@@ -1,0 +1,57 @@
+---
+title: "Agentic RAG for Normative Documents"
+role: "Author · Undergraduate Thesis (UFPI)"
+year: 2026
+outcomeSummary: "Agentic RAG assistant that checks each claim against a cited source before answering. In exploratory evaluation, the share of unsupported sentences dropped from 0.116 to 0.024."
+overview: "A research prototype that answers questions about university regulations, combining scope control, clarification, version-aware hybrid retrieval, citation-anchored generation and a deterministic verifier that runs before every answer."
+problem: "Academic regulations are hard to query reliably: undergraduate and graduate rules reuse the same article numbers, norms are amended or revoked over time, and a plain RAG pipeline can mix versions or add conditions and deadlines the documents never state."
+constraints:
+  - "Answers must point to the exact regulation, article and provision they rely on."
+  - "Revoked or amended wording must not be presented as current."
+  - "Questions that don't say whether they concern undergraduate or graduate rules must not be answered by guessing."
+  - "Everything must be reproducible and measured against fixed evaluation sets, with limitations reported alongside the results."
+approach: "Documents are converted with Docling and chunked by article to preserve legal structure. A LangGraph conversational layer handles scope, education level and pending clarifications before any retrieval. Retrieval combines vector search (Chroma, HNSW, cosine) with BM25 lexical search, followed by a version filter and temporal context. The model then generates claims, each paired with a literal quote from the retrieved text, and a deterministic verifier checks quotes, numbers, deadlines, provisions, level and added negations. Claims that fail are dropped and turned into caveats, and when nothing verified remains, the system returns a safe fallback instead of an answer."
+keyDecisions:
+  - decision: "Separate scope, education level and normative version decisions from answer generation."
+    reasoning: "Each decision can be tested on its own, and failures can be traced to a specific stage instead of a single opaque prompt."
+  - decision: "Use hybrid retrieval with vector search and BM25."
+    reasoning: "Legal text relies on exact terms and article numbers that lexical search handles well, while vector search covers paraphrased questions."
+    alternatives:
+      - "Adaptive RAG and K = 10 with re-ranking, evaluated and not promoted to the selected configuration."
+  - decision: "Generate quote-anchored claims and verify them deterministically before responding."
+    reasoning: "Every sentence in the answer becomes checkable against a source, which sharply reduced unsupported sentences on the development set."
+    tradeOff: "The verifier checks form rather than meaning, and the extra caution delivers less content on complex questions."
+  - decision: "Ask a clarifying question when the education level is ambiguous."
+    reasoning: "Undergraduate and graduate norms share article numbers, so guessing the level is a common source of confident but wrong answers."
+techStack:
+  - "Python"
+  - "LangGraph"
+  - "LangChain"
+  - "FastAPI"
+  - "PostgreSQL"
+  - "Chroma"
+  - "BM25"
+  - "Docling"
+  - "Streamlit"
+  - "Docker"
+  - "Pytest"
+impact:
+  metrics:
+    - label: "Correct action (40 questions)"
+      value: "0.925 vs 0.900"
+    - label: "Unsupported sentences"
+      value: "0.116 → 0.024"
+    - label: "Recall@5 / MRR@5"
+      value: "0.886 / 0.909"
+  qualitative: "Compared with the previous free-text version, the citation-anchored pipeline chose the correct action more often and produced far fewer unsupported sentences. These results are exploratory and come from development sets. On a harder set of 31 complex questions it did not beat the previous version: completeness was 0.34 versus 0.49, because the verifier removes content it cannot confirm."
+learnings:
+  - "Verifying form is not verifying meaning. A literal quote can still support the wrong conclusion."
+  - "More caution in the output is not a general quality gain; it has to be measured against completeness."
+  - "Evaluation sets used to guide development must be kept separate from the sets used to report results."
+  - "Temporal questions and comparisons between regulations remain the hardest cases."
+featured: true
+status: ongoing
+order: 1
+---
+
+Source code, evaluation protocol and reports: [github.com/wesleycoutinhodev/bisco-agente-normativo](https://github.com/wesleycoutinhodev/bisco-agente-normativo)

@@ -26,7 +26,6 @@ jobs:
     env:
       SITE_URL: ${{ secrets.SITE_URL }}
       SITE_AUTHOR_NAME: ${{ secrets.SITE_AUTHOR_NAME }}
-      SITE_AUTHOR_EMAIL: ${{ secrets.SITE_AUTHOR_EMAIL }}
       SOCIAL_GITHUB: ${{ secrets.SOCIAL_GITHUB }}
       SOCIAL_LINKEDIN: ${{ secrets.SOCIAL_LINKEDIN }}
       SOCIAL_TWITTER: ${{ secrets.SOCIAL_TWITTER }}

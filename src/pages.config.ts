@@ -55,17 +55,17 @@ export const pagesConfig = {
    */
   home: {
     title: 'Home',
-    description: 'Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI.',
+    description: 'Software engineer building AI systems you can measure, test and trust: LLM applications, RAG and machine learning.',
   },
   
   /**
    * Projects listing page (/projects)
    */
   projects: {
-    title: 'Projects - Engineering Case Studies',
-    description: 'Engineering case studies covering backend systems, distributed processing, cloud infrastructure and applied AI integration.',
+    title: 'Projects - AI & Engineering Case Studies',
+    description: 'Case studies covering agentic RAG, dataset curation for machine learning, LLM applications and the backend engineering around them.',
     heading: 'Projects',
-    intro: 'Engineering case studies showing how I approach technical problems, evaluate trade-offs and turn requirements into working systems.',
+    intro: 'How I approach AI systems end to end: the problem, the trade-offs, how the result was measured and what it still gets wrong.',
   },
   
   /**
@@ -73,9 +73,9 @@ export const pagesConfig = {
    */
   uses: {
     title: 'Uses - Tools, Stack and Environment',
-    description: 'Tools, technologies and environments I use for backend software engineering.',
+    description: 'Tools, technologies and environments I use to build and evaluate AI systems.',
     heading: 'Uses',
-    intro: 'A practical overview of the tools, technologies and environments that support my development workflow.',
+    intro: 'The tools, frameworks and environments I rely on to build, test and evaluate AI systems.',
   },
   
   /**
@@ -83,7 +83,7 @@ export const pagesConfig = {
    */
   contact: {
     title: 'Contact - Get in Touch',
-    description: 'Get in touch to discuss backend software engineering opportunities, collaborations or technical challenges.',
+    description: 'Get in touch about AI Engineering or Software Engineering roles, collaborations or technical questions.',
     heading: 'Get in Touch',
   },
 } as const;

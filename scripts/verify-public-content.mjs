@@ -78,6 +78,9 @@ const projectSlugs = [
   'notebook-lm-plataforma-inteligente',
   'sistema-monitoramento-distribuido',
   'my-simple-uploads',
+  'agentic-rag-normative-documents',
+  'docentesdc-curated-dataset',
+  'b3-rag-qa-system',
 ];
 for (const slug of projectSlugs) {
   assert.ok(existsSync(join(dist, 'projects', slug, 'index.html')), `project slug ${slug} must be preserved`);
@@ -85,14 +88,16 @@ for (const slug of projectSlugs) {
 }
 
 const homepage = readFileSync(join(dist, 'index.html'), 'utf8');
-assert.match(homepage, /BACKEND SOFTWARE ENGINEER/);
-assert.match(homepage, /I build backend systems that stay reliable beyond the happy path\./);
+assert.match(homepage, /AI ENGINEER · SOFTWARE ENGINEERING/);
+assert.match(homepage, /I build AI systems you can measure, test and trust\./);
 assert.match(homepage, /IT Intern (?:—|&mdash;|&#x2014;) Software Engineering &amp; Computer Vision/);
 assert.match(homepage, /STRANS - Superintendência Municipal de Transportes e Trânsito/);
 assert.match(homepage, /Digzen Automações B2B/);
-assert.match(homepage, /View Case Studies/);
-assert.match(homepage, /<title>Wesley Coutinho - Backend Software Engineer \| Python &amp; Distributed Systems<\/title>/);
-assert.match(homepage, /Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI\./);
+assert.match(homepage, /View Projects/);
+assert.match(homepage, /<title>Wesley Coutinho (?:—|&mdash;|&#x2014;) AI Engineer \| LLMs, RAG &amp; Machine Learning<\/title>/);
+assert.match(homepage, /Software engineer focused on AI systems: LLM applications, RAG and machine learning/);
+assert.match(homepage, /hello@wesleycoutinhodev\.me/);
+assert.match(homepage, /https:\/\/huggingface\.co\/wesleycoutinhodev/);
 assert.match(homepage, /https:\/\/github\.com\/wesleycoutinhodev/);
 assert.match(homepage, /https:\/\/linkedin\.com\/in\/wesleycoutinhodev/);
 
@@ -120,7 +125,6 @@ const unsupportedClaims = [
   /\bmicroservices?\b/i,
   /\bSystems Architect\b/i,
   /\bSenior Software Engineer\b/i,
-  /\bAI Engineer\b/i,
   /\bMachine Learning Engineer\b/i,
   /\bLaunchDarkly\b/i,
   /\bBlack Friday\b/i,
@@ -149,9 +153,8 @@ for (const collection of ['writing', 'decisions', 'journey', 'speaking']) {
 }
 
 const readme = readFileSync(join(root, 'README.md'), 'utf8');
-assert.match(readme, /Backend Software Engineer/);
-assert.match(readme, /Distributed Systems/);
-assert.match(readme, /Applied AI/);
+assert.match(readme, /AI Engineer/);
+assert.match(readme, /measure, test and trust/);
 assert.doesNotMatch(readme, /Portf[oó]lio pessoal|Este reposit[oó]rio|Rodando localmente|Licen[cç]a/i);
 
 const manifest = JSON.parse(readFileSync(join(root, 'public', 'site.webmanifest'), 'utf8'));

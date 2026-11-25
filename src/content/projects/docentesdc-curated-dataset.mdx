@@ -1,0 +1,38 @@
+---
+title: "docentesDC Curated: Dataset for RAG and Fine-tuning"
+role: "Author"
+year: 2026
+outcomeSummary: "Curated and published on Hugging Face a text dataset with 12,562 unique records, with hash-verified train/validation splits to reduce the risk of data leakage."
+overview: "A curated text dataset prepared for information retrieval, RAG, language model evaluation and fine-tuning experiments, published openly on Hugging Face."
+problem: "Raw text collections contain duplicates and inconsistent formatting. If near-identical records end up in both training and validation, evaluation results look better than they really are."
+constraints:
+  - "No overlap between train and validation splits."
+  - "Representative class distribution in both splits."
+  - "A format that loads directly with Hugging Face Datasets."
+approach: "Normalized the text, consolidated duplicates, and built a stratified train/validation split. Content hashes were computed for every record to verify that no example appears in both splits before publishing."
+keyDecisions:
+  - decision: "Use content hashes to verify split integrity."
+    reasoning: "Hashing normalized content catches exact duplicates that ID-based checks miss, making the no-overlap guarantee verifiable."
+  - decision: "Use a stratified split."
+    reasoning: "Keeping the distribution consistent across splits makes validation metrics more meaningful."
+techStack:
+  - "Python"
+  - "pandas"
+  - "scikit-learn"
+  - "Hugging Face Datasets"
+impact:
+  metrics:
+    - label: "Unique records"
+      value: "12,562"
+    - label: "Train/validation overlap"
+      value: "0 records"
+  qualitative: "An open, documented dataset ready for retrieval, RAG evaluation and fine-tuning experiments, with split integrity that can be checked by anyone."
+learnings:
+  - "Evaluation quality starts with the dataset: leakage silently inflates results."
+  - "Deduplication rules should be explicit and documented alongside the data."
+featured: true
+status: completed
+order: 2
+---
+
+Dataset: [huggingface.co/datasets/wesleycoutinhodev/docentesDC-curado](https://huggingface.co/datasets/wesleycoutinhodev/docentesDC-curado)

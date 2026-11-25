@@ -102,16 +102,20 @@ function generateStructuredData(type: string, data: Record<string, any>) {
         email: data.email || siteConfig.author.email,
         image: data.image,
         knowsAbout: data.skills || [
-          'Backend Engineering',
+          'AI Engineering',
+          'Large Language Models',
+          'Retrieval-Augmented Generation',
+          'AI Agents',
+          'Machine Learning',
+          'Model Evaluation',
           'Python',
           'FastAPI',
           'Distributed Systems',
-          'PostgreSQL',
-          'Redis',
-          'Docker',
-          'Reliability',
-          'Applied AI',
         ],
+        alumniOf: {
+          '@type': 'CollegeOrUniversity',
+          name: 'Universidade Federal do Piauí',
+        },
       };
 
     case 'BreadcrumbList':

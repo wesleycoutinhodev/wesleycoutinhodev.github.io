@@ -15,9 +15,12 @@
  * Sections:
  * 1. Hero - Value statement with featured case study snapshots
  * 2. Introduction - Brief personal introduction
- * 3. Experience - Concise professional background
- * 4. Thinking - Problems and topics of interest
- * 5. CTA - Call-to-action for work opportunities
+ * 3. Focus - Areas of work
+ * 4. Principles - How I work
+ * 5. Experience - Professional background
+ * 6. Skills - Grouped technical skills
+ * 7. Education & Certifications
+ * 8. CTA - Call-to-action for work opportunities
  * 
  * Features:
  * - Featured projects showcase (top 2-3)
@@ -76,21 +79,21 @@ const caseSnapshots = featuredProjects.slice(0, 3);
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-left">
-          <p class="eyebrow">BACKEND SOFTWARE ENGINEER</p>
+          <p class="eyebrow">AI ENGINEER · SOFTWARE ENGINEERING</p>
           <h1 class="hero-title">
-            I build backend systems that stay reliable beyond the happy path.
+            I build AI systems you can measure, test and trust.
           </h1>
           <p class="hero-sub">
-            Backend Software Engineer focused on Python, FastAPI, distributed systems and applied AI — from API design and event-driven processing to deployment and reliability.
+            Software engineer specializing in LLM applications, retrieval and machine learning. I work across the whole path, from data and models to the APIs, pipelines and tests that put them in front of real users.
           </p>
-          <p class="hero-technologies">
-            Python · FastAPI · PostgreSQL · Redis · Docker · Distributed Systems
-          </p>
+          <ul class="hero-proof">
+            <li>Engineering intern at STRANS, building an AI-enabled traffic monitoring platform</li>
+            <li>Researching agentic RAG for my undergraduate thesis at UFPI</li>
+            <li>Open dataset on Hugging Face with 12,562 curated records</li>
+          </ul>
           <div class="hero-cta">
-            <a href="/projects" class="btn-primary">View Case Studies</a>
-            {siteConfig.social.github && (
-              <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
-            )}
+            <a href="/projects" class="btn-primary">View Projects</a>
+            <a href="/contact" class="btn-secondary">Get in Touch</a>
           </div>
         </div>
 
@@ -99,7 +102,7 @@ const caseSnapshots = featuredProjects.slice(0, 3);
           <div class="case-snapshots">
             {caseSnapshots.map((project) => (
               <a href={`/projects/${project.id}`} class="case-snapshot">
-                <span class="case-label">Case Study · {project.data.role}</span>
+                <span class="case-label">Case Study · {project.data.year}</span>
                 <span class="case-title">{project.data.title}</span>
                 <span class="case-outcome">{project.data.outcomeSummary}</span>
               </a>
@@ -112,14 +115,50 @@ const caseSnapshots = featuredProjects.slice(0, 3);
     <section class="introduction" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
       <p>
-        I'm {siteConfig.author.name}, a Backend Software Engineer and Computer Science student focused on distributed systems, reliability and applied AI.
+        I'm {siteConfig.author.name}, a Computer Science student at UFPI and a software engineer focused on AI systems.
       </p>
       <p>
-        I work primarily with Python, FastAPI, PostgreSQL, Redis and Docker, building backend services and integrating systems that need to process data reliably across different components.
+        Most of what makes an AI system useful happens around the model: how data is prepared, how context is retrieved, how outputs are checked and how the service behaves when something fails. That's the work I enjoy most.
       </p>
       <p>
-        My current professional work combines backend engineering, distributed processing and real-time computer vision.
+        Today I build backend services and machine learning pipelines for a traffic monitoring platform, and research retrieval-augmented generation over institutional documents.
       </p>
+    </section>
+
+    <section class="focus" aria-labelledby="focus-heading">
+      <h2 id="focus-heading">What I work on</h2>
+      <div class="focus-grid">
+        <article class="focus-item">
+          <h3>LLM applications &amp; RAG</h3>
+          <p>Retrieval, grounding and agent workflows, plus evaluating whether answers are actually supported by their sources.</p>
+        </article>
+        <article class="focus-item">
+          <h3>Machine learning</h3>
+          <p>Dataset curation, training and evaluation, with care for clean splits, data leakage and honest benchmarks.</p>
+        </article>
+        <article class="focus-item">
+          <h3>Engineering for AI systems</h3>
+          <p>APIs, event-driven pipelines, idempotency, retries and contract tests: everything a model needs to run reliably.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-heading">
+      <h2 id="principles-heading">How I work</h2>
+      <dl class="principles-list">
+        <div>
+          <dt>Measure before claiming</dt>
+          <dd>Changes are judged by evaluation, and results are reported together with their limits.</dd>
+        </div>
+        <div>
+          <dt>Ground outputs in sources</dt>
+          <dd>Answers should point to evidence. When the evidence isn't there, the system should say so.</dd>
+        </div>
+        <div>
+          <dt>Design for the failure path</dt>
+          <dd>Retries, idempotency and fallbacks are part of the design, not an afterthought.</dd>
+        </div>
+      </dl>
     </section>
 
     <section class="experience" aria-labelledby="experience-heading">
@@ -133,10 +172,13 @@ const caseSnapshots = featuredProjects.slice(0, 3);
             </div>
             <p class="experience-period">April 2026 — Present</p>
           </div>
-          <p class="experience-summary">
-            I contribute to an intelligent traffic monitoring platform by building Python and FastAPI services, PostgreSQL data flows and Redis-based event processing. My work also covers reliability mechanisms, infrastructure and the integration of real-time computer vision pipelines using YOLO, OCR and RTSP.
-          </p>
-          <p class="experience-stack">Python · FastAPI · PostgreSQL · Redis · Docker · MinIO/S3 · Pytest · YOLO · OCR · RTSP</p>
+          <ul class="experience-points">
+            <li>Build backend services and REST APIs for a distributed traffic monitoring platform, connecting AI workloads running at the edge to backend services through event-driven communication.</li>
+            <li>Design asynchronous processing and reliability mechanisms (idempotency, retries, failure recovery, backpressure and versioned contracts) covered by unit, integration and contract tests.</li>
+            <li>Develop machine learning pipelines end to end: dataset preparation, training, benchmarking, inference and model evaluation.</li>
+            <li>Helped separate evidence storage from event transport using S3-compatible object storage and lightweight references, reducing message payloads and coupling between services.</li>
+          </ul>
+          <p class="experience-stack">Python · FastAPI · PostgreSQL · Redis Streams · Docker · MinIO/S3 · Pytest · Machine Learning</p>
         </article>
 
         <article class="experience-item">
@@ -147,29 +189,61 @@ const caseSnapshots = featuredProjects.slice(0, 3);
             </div>
             <p class="experience-period">October 2025 — December 2025</p>
           </div>
-          <p class="experience-summary">
-            I built an AI-powered conversational workflow for lead qualification, integrating the OpenAI API, n8n and external services to automate operational steps such as meeting scheduling.
-          </p>
-          <p class="experience-stack">OpenAI API · n8n · API Integration · LLMs · Automation</p>
+          <ul class="experience-points">
+            <li>Built an LLM-powered conversational agent for lead qualification using the OpenAI API, connected to automated sales workflows.</li>
+            <li>Orchestrated n8n workflows and external APIs to automate commercial steps such as meeting scheduling.</li>
+          </ul>
+          <p class="experience-stack">OpenAI API · LLMs · n8n · API Integration · Automation</p>
         </article>
       </div>
     </section>
 
-    <section class="thinking">
-      <h2>Problems I like to solve</h2>
-      <p class="thinking-list">
-        Distributed backend systems · Event-driven processing · Reliability and failure recovery · API and service integration · Data persistence and consistency · Applied AI integration · Systems that evolve without unnecessary coupling
-      </p>
+    <section class="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <dl class="skills-list">
+        <div>
+          <dt>AI &amp; LLMs</dt>
+          <dd>LLMs · RAG · AI agents · LangGraph · LangChain · OpenAI API · Embeddings · FAISS · Chroma · Hugging Face</dd>
+        </div>
+        <div>
+          <dt>Machine learning</dt>
+          <dd>Dataset curation · Training · Inference · Model evaluation · Transformers · scikit-learn · pandas</dd>
+        </div>
+        <div>
+          <dt>Backend</dt>
+          <dd>Python · FastAPI · Pydantic · SQLAlchemy · Alembic · REST APIs · PostgreSQL · Redis</dd>
+        </div>
+        <div>
+          <dt>Distributed systems</dt>
+          <dd>Event-driven architecture · Asynchronous processing · Idempotency · Retries · Backpressure · Versioned contracts</dd>
+        </div>
+        <div>
+          <dt>Infrastructure &amp; quality</dt>
+          <dd>Docker · Linux · AWS · S3-compatible storage · Observability · Pytest · TDD · Contract testing</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="credentials" aria-labelledby="credentials-heading">
+      <h2 id="credentials-heading">Education &amp; Certifications</h2>
+      <ul class="credentials-list">
+        <li><strong>B.Sc. in Computer Science</strong>, Universidade Federal do Piauí (UFPI) · 2022 — Present</li>
+        <li><strong>AWS Academy Graduate</strong> · Generative AI Foundations</li>
+        <li><strong>AWS Academy Graduate</strong> · Cloud Foundations</li>
+        <li><strong>EF SET English Certificate</strong> · B2 Upper Intermediate</li>
+      </ul>
     </section>
 
     <section class="cta">
-      <h2>Let's build reliable systems</h2>
+      <h2>Let's build AI that holds up</h2>
       <p>
-        I'm open to backend software engineering opportunities involving distributed systems, reliability and applied AI.
+        I'm open to AI Engineering and Software Engineering roles. If your team builds with LLMs, retrieval or machine learning, I'd like to hear about it.
       </p>
       <div class="cta-buttons">
-        <a href="/projects" class="btn-primary">View Case Studies</a>
-        <a href="/contact" class="btn-secondary">Get in Touch</a>
+        <a href="/contact" class="btn-primary">Get in Touch</a>
+        {siteConfig.social.github && (
+          <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
+        )}
       </div>
     </section>
   </main>
@@ -224,11 +298,32 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       line-height: 1.6;
     }
 
-    .hero-technologies {
+    .hero-proof {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
       font-size: 0.875rem;
       color: var(--color-text-muted);
-      margin-bottom: 2rem;
-      line-height: 1.7;
+      line-height: 1.5;
+    }
+
+    .hero-proof li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .hero-proof li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
     }
 
     .hero-cta {
@@ -329,8 +424,11 @@ const caseSnapshots = featuredProjects.slice(0, 3);
     }
 
     .introduction h2,
+    .focus h2,
+    .principles h2,
     .experience h2,
-    .thinking h2 {
+    .skills h2,
+    .credentials h2 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 1.25rem;
@@ -345,9 +443,92 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       color: var(--color-text);
     }
 
+    .focus,
+    .principles,
     .experience,
-    .thinking {
+    .skills,
+    .credentials {
       margin-bottom: 5rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .focus-item {
+      padding: 1.5rem;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+
+    .focus-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .focus-item p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+
+    .principles-list,
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .principles-list dt,
+    .skills-list dt {
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.25rem;
+    }
+
+    .principles-list dd,
+    .skills-list dd {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+
+    .experience-points {
+      max-width: 760px;
+      padding-left: 1.125rem;
+      margin: 0 0 1rem;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+
+    .experience-points li + li {
+      margin-top: 0.375rem;
+    }
+
+    .credentials-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .credentials-list strong {
+      color: var(--color-text);
+      font-weight: 600;
     }
 
     .experience-list {
@@ -395,22 +576,8 @@ const caseSnapshots = featuredProjects.slice(0, 3);
       text-align: right;
     }
 
-    .experience-summary {
-      max-width: 760px;
-      font-size: 0.9375rem;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-
     .experience-stack {
       line-height: 1.6;
-    }
-
-    .thinking-list {
-      font-size: 1.0625rem;
-      line-height: 1.9;
-      color: var(--color-text-secondary);
-      max-width: 680px;
     }
 
     .cta {
@@ -478,8 +645,13 @@ const caseSnapshots = featuredProjects.slice(0, 3);
         font-size: 1rem;
       }
 
-      .experience-item {
+      .experience-item,
+      .focus-item {
         padding: 1.25rem;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
       }
 
       .experience-header {

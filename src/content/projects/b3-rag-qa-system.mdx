@@ -1,0 +1,36 @@
+---
+title: "RAG Question Answering over Financial Documents"
+role: "Team member · RAG pipeline"
+year: 2025
+outcomeSummary: "Team-built RAG pipeline answering questions about B3 (Brazilian stock exchange) documents and news with open models: bge-m3 embeddings, FAISS, re-ranking and Qwen2.5-7B-Instruct."
+overview: "An academic team project that answers questions about financial documents and news by retrieving relevant passages and generating answers grounded in them."
+problem: "Financial documents are long and dense. Answering questions about them requires finding the right passages first and keeping the model's answer within that context."
+constraints:
+  - "Open models only, running on limited GPU resources."
+  - "Answers must stay grounded in the retrieved context."
+  - "Expensive preprocessing should not be repeated on every run."
+approach: "Documents are split into 800-token chunks with 100-token overlap and embedded with BAAI/bge-m3 into a FAISS index. At query time, candidates are re-ranked with bge-reranker-v2-m3 and the top 5 chunks are passed to Qwen2.5-7B-Instruct to generate the answer. Chunks and the index are persisted so they can be restored instead of rebuilt."
+keyDecisions:
+  - decision: "Add a re-ranking stage after vector search."
+    reasoning: "A cross-encoder re-ranker improves the precision of the few chunks that actually reach the model."
+    tradeOff: "Extra latency per query in exchange for better context."
+  - decision: "Use a multilingual embedding model."
+    reasoning: "The corpus is in Portuguese, and bge-m3 handles multilingual retrieval well."
+techStack:
+  - "Python"
+  - "FAISS"
+  - "Sentence Transformers"
+  - "Transformers"
+  - "Hugging Face"
+  - "Qwen2.5-7B-Instruct"
+impact:
+  qualitative: "A working end-to-end RAG pipeline with ingestion, semantic retrieval, re-ranking and grounded generation using open models."
+learnings:
+  - "Chunking and re-ranking choices matter as much as the generator model."
+  - "Persisting intermediate artifacts makes experiments much faster to iterate on."
+featured: false
+status: completed
+order: 4
+---
+
+Source code: [github.com/wesleycoutinhodev/b3-rag-qa-system](https://github.com/wesleycoutinhodev/b3-rag-qa-system)

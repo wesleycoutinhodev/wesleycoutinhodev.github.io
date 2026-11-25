@@ -2,7 +2,7 @@
  * Configuration Sections:
  * - Site metadata (URL, language, title, description)
  * - Author information (name, title, bio, email, location)
- * - Social links (GitHub, LinkedIn, Twitter, Mastodon, Bluesky)
+ * - Social links (GitHub, LinkedIn, Hugging Face, Twitter, Mastodon, Bluesky)
  * - Navigation structure
  * 
  * @module config
@@ -52,14 +52,14 @@ export const siteConfig = {
    * 
    * Used as fallback when page-specific title is not provided.
    */
-  title: getEnv('SITE_TITLE', 'Wesley Coutinho - Backend Software Engineer | Python & Distributed Systems'),
+  title: getEnv('SITE_TITLE', 'Wesley Coutinho — AI Engineer | LLMs, RAG & Machine Learning'),
   
   /**
    * Site description
    * 
    * Default meta description for SEO and social sharing.
    */
-  description: getEnv('SITE_DESCRIPTION', 'Backend Software Engineer focused on Python, FastAPI, distributed systems, reliability and applied AI. Engineering case studies covering backend systems, cloud infrastructure and AI integration.'),
+  description: getEnv('SITE_DESCRIPTION', 'Software engineer focused on AI systems: LLM applications, RAG and machine learning, built with tested and reliable backend engineering in Python.'),
   
   /**
    * Author information
@@ -72,13 +72,13 @@ export const siteConfig = {
     name: getEnv('SITE_AUTHOR_NAME', 'Wesley Coutinho'),
     
     /** Professional title or role */
-    title: getEnv('SITE_AUTHOR_TITLE', 'Backend Software Engineer'),
+    title: getEnv('SITE_AUTHOR_TITLE', 'AI Engineer'),
     
     /** Short biography or professional summary */
-    bio: getEnv('SITE_AUTHOR_BIO', 'Backend Software Engineer and Computer Science student focused on distributed systems, reliability and applied AI.'),
+    bio: getEnv('SITE_AUTHOR_BIO', 'Software engineer and Computer Science student at UFPI building AI systems you can measure, test and trust: LLM applications, RAG and machine learning.'),
     
     /** Contact email address */
-    email: getEnv('SITE_AUTHOR_EMAIL', 'wesleycoutinhodev@gmail.com'),
+    email: getEnv('SITE_AUTHOR_EMAIL', 'hello@wesleycoutinhodev.me'),
     
     /** Location (optional, empty string to hide) */
     location: getEnv('SITE_AUTHOR_LOCATION', 'Teresina, Piauí, Brazil'),
@@ -92,10 +92,13 @@ export const siteConfig = {
    */
   social: {
     /** GitHub profile URL */
-    github: getEnv('SOCIAL_GITHUB', ''),
+    github: getEnv('SOCIAL_GITHUB', 'https://github.com/wesleycoutinhodev'),
     
     /** LinkedIn profile URL */
-    linkedin: getEnv('SOCIAL_LINKEDIN', ''),
+    linkedin: getEnv('SOCIAL_LINKEDIN', 'https://linkedin.com/in/wesleycoutinhodev'),
+    
+    /** Hugging Face profile URL */
+    huggingface: getEnv('SOCIAL_HUGGINGFACE', 'https://huggingface.co/wesleycoutinhodev'),
     
     /** Twitter/X profile URL */
     twitter: getEnv('SOCIAL_TWITTER', ''),
@@ -119,6 +122,20 @@ export const siteConfig = {
     { label: 'Contact', href: '/contact' },
   ],
 } as const;
+
+/**
+ * Display labels for social platforms
+ *
+ * Keys match `siteConfig.social`. Unknown keys fall back to a capitalized key.
+ */
+export const socialLabels: Record<string, string> = {
+  github: 'GitHub',
+  linkedin: 'LinkedIn',
+  huggingface: 'Hugging Face',
+  twitter: 'Twitter',
+  mastodon: 'Mastodon',
+  bluesky: 'Bluesky',
+};
 
 /**
  * Type export for the entire site configuration
