@@ -86,11 +86,6 @@ const caseSnapshots = featuredProjects.slice(0, 3);
           <p class="hero-sub">
             Software engineer specializing in LLM applications, retrieval and machine learning. I work across the whole path, from data and models to the APIs, pipelines and tests that put them in front of real users.
           </p>
-          <ul class="hero-proof">
-            <li>Engineering intern at STRANS, building an AI-enabled traffic monitoring platform</li>
-            <li>Researching agentic RAG for my undergraduate thesis at UFPI</li>
-            <li>Open dataset on Hugging Face with 12,562 curated records</li>
-          </ul>
           <div class="hero-cta">
             <a href="/projects" class="btn-primary">View Projects</a>
             <a href="/contact" class="btn-secondary">Get in Touch</a>
@@ -294,36 +289,8 @@ const caseSnapshots = featuredProjects.slice(0, 3);
     .hero-sub {
       font-size: 1.125rem;
       color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       line-height: 1.6;
-    }
-
-    .hero-proof {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-
-    .hero-proof li {
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    .hero-proof li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-accent);
     }
 
     .hero-cta {
